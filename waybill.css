@@ -27,6 +27,7 @@
   box-shadow: 0px 0px 4px #ccc;
   background: url(./bgwaybill.png) #fff no-repeat center center/cover;
   font-family: sans-serif;
+  overflow: hidden; /* Prevents overflow issues */
   /* Panzoom will handle positioning via transform, so no need for 'absolute' here */
 }
 
