@@ -356,9 +356,9 @@
                     <div class="header">
                         <div class="cancel_button" onclick="handleSideToggle()"><i class="fa fa-arrow-right"></i></div>
                         <div class="track_id">XY-1234-LAG</div>
-                        <div class="status">
-                            <span class="circle"></span>
-                            On-Route
+                        <div class="status intransit trackeron">
+                            <div></div>
+                            <p>In transit</p>
                         </div>
                         <div class="call_action">
                             <button class="call_btn"><i class="fa-solid fa-phone"></i><span
@@ -3060,15 +3060,23 @@
                 return;
             }
 
-            // Convert SVGs first, then take screenshot
+            // Store the current transform state of the waybill
+            const originalTransform = waybill.style.transform;
+
+            // Temporarily reset the transform to its original, unscaled state
+            // This ensures html2canvas captures the full-size element
+            waybill.style.transform = 'none';
+
             html2canvas(waybill, { scale: 2 }).then(canvas => {
+                // Restore the original transform after the screenshot is taken
+                waybill.style.transform = originalTransform;
+
                 const imgData = canvas.toDataURL("image/png");
                 const link = document.createElement("a");
                 link.href = imgData;
-                link.download = "wabill.png";
+                link.download = "waybill.png";
                 link.click();
             });
-            // Delay ensures SVGs are replaced before capture
         };
 
 
