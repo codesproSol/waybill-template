@@ -268,8 +268,8 @@ body {
 .epod_cont main .epod_tracking .epod_content .epod_boxes .epod_dash_box .status .stats {
   width: 10px;
   height: 10px;
-  background: green;
-  outline: 1px solid green;
+  /* background: green;
+  outline: 1px solid green; */
   outline-offset: 2px;
   margin-right: 5px;
   border-radius: 50%;
@@ -1617,7 +1617,7 @@ tr:hover {
 }
 
 /* In transit */
-.status.intransit > div {
+.in-transit .status.enroute > div {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -1630,8 +1630,8 @@ tr:hover {
   /* animation: ripple-intransit 1.5s infinite; */
 }
 
-.status.trackeron.intransit > div {
-  animation: ripple-intransit 1.5s infinite;
+.in-transit .status.trackeron.enroute > div {
+  animation: ripple-intransit 0.8s infinite ease-in-out;
 }
 
 @keyframes ripple-intransit {
@@ -1647,6 +1647,13 @@ tr:hover {
     opacity: 0.5;
     box-shadow: 0 0 0 10px #ff990033, 0 0 0 20px transparent;
   }
+}
+
+.status.enroute {
+  outline: none !important;
+  filter: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
 }
 
 .status.enroute > div {
@@ -1790,6 +1797,21 @@ tr:hover {
   border-style: none;
   background: #fff;
   cursor: pointer;
+}
+
+.btn-primary3 {
+  padding: 8px 14px;
+  border-radius: 5px;
+  outline: none;
+  border-style: none;
+  background: #fff;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.btn-primary3:hover {
+  background: var(--primary-color);
+  color: #fff;
 }
 
 .btn-primary:disabled {

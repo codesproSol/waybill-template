@@ -193,12 +193,12 @@
                         </div>
 
                         <div class="epod_boxes" id="dataContainer">
-                            <div class="epod_dash_box">
+                            <div class="epod_dash_box in-transit">
                                 <div class="header">
                                     <div class="track_id">XY-1234-LAG</div>
-                                    <div class="status intransit trackeron">
+                                    <div class="status enroute trackeron">
                                         <div></div>
-                                        <p>In transit</p>
+                                        <p>en route</p>
                                     </div>
                                 </div>
                                 <div class="truck_destination">
@@ -213,6 +213,36 @@
                                                 asperiores tempore quia eveniet optio culpa nihil expedita hic officiis
                                                 ad
                                                 ea possimus iste, dicta non aperiam.</p>
+                                        </div>
+                                        <div class="route active">
+                                            <p>Ikeja, Lagos</p>
+                                        </div>
+                                        <div class="route">
+                                            <p>Lekki Phase 1, Lagos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="truck_img">
+                                    <img src="img.png" alt="truckdetails">
+                                </div>
+                                <div class="bl_no" style="display: none;">BL-001234</div>
+                            </div>
+                            <div class="epod_dash_box">
+                                <div class="header">
+                                    <div class="track_id">XY-3454-LAG</div>
+                                    <div class="status enroute trackeron">
+                                        <div></div>
+                                        <p>en route</p>
+                                    </div>
+                                </div>
+                                <div class="truck_destination">
+                                    <div class="time_details">
+                                        <span class="time">06:15:00</span>
+                                        <span class="day">3 days left</span>
+                                    </div>
+                                    <div class="destination_info">
+                                        <div class="route active">
+                                            <p>Egbeda</p>
                                         </div>
                                         <div class="route active">
                                             <p>Ikeja, Lagos</p>
@@ -1898,63 +1928,72 @@
 
                 if (dataContainer.classList.contains('table-view')) {
                     let tableHTML = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Track ID</th>
-                            <th>Status</th>
-                            <th>Time</th>
-                            <th>Day</th>
-                            <th>Destination</th>
-                        </tr>
-                    </thead>
-                    <tbody>`;
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Truck ID</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Destination</th>
+                </tr>
+            </thead>
+            <tbody>`;
 
+                    // Build table rows from boxes
                     const dashBoxes = dataContainer.querySelectorAll('.epod_dash_box');
                     dashBoxes.forEach(box => {
-                        const trackId = box.querySelector('.track_id')?.textContent || '';
-                        const statusText = box.querySelector('.status p')?.textContent || '';
-                        const time = box.querySelector('.time')?.textContent || '';
-                        const day = box.querySelector('.day')?.textContent || '';
+                        const trackId = box.querySelector('.track_id')?.textContent.trim() || '';
+                        const statusText = box.querySelector('.status p')?.textContent.trim() || '';
+                        const time = box.querySelector('.time')?.textContent.trim() || '';
+                        const day = box.querySelector('.day')?.textContent.trim() || '';
 
-                        const statscls = box.querySelector('.status').classList;
-                        // alert(statscls)
+                        // Detect in-transit status
+                        const isInTransit = box.classList.contains('in-transit') ||
+                            (box.dataset.intransit && box.dataset.intransit === "true");
 
-                        // Correctly get all destination texts, including those within <p> tags
+                        // Collect destinations
                         const destinations = Array.from(box.querySelectorAll('.route')).map(route => {
                             const routeP = route.querySelector('p');
                             return routeP ? routeP.textContent.trim() : route.textContent.trim();
                         }).join(', ') || '';
 
+                        // Action button for details
+                        const actionBtnTable = `<button type="button" class="btn-primary3" onclick="handleSideToggle()">Details</button>`;
 
-
-                        // Dynamically create the status indicator
-                        // const statusClass = 'status-' + statusText.replace(/ /g, '-').toLowerCase();
-                        // const statusIndicator = `<div class="status-indicator ${statusClass}">
-                        //     </div>${statusText}`;
-
-
+                        // Status indicator
+                        const statscls = box.querySelector('.status').classList;
                         const statusIndicator = `<div class="${statscls}" style="display: flex; align-items: center; gap: 5px;">
                                         <div></div>
                                         <p>${statusText}</p>
-                                    </div>`
+                                    </div>`;
 
-                        tableHTML += `<tr><td>${trackId}</td><td>${statusIndicator}</td><td>${time}</td><td>${day}</td><td class="text-wrap">${destinations}</td></tr>`;
+                        // Add row to table
+                        tableHTML += `
+                <tr data-intransit="${isInTransit}" data-route="${statusText.toLowerCase()}">
+                    <td>${actionBtnTable}</td>
+                    <td>${trackId}</td>
+                    <td>${statusIndicator}</td>
+                    <td>${time}</td>
+                    <td>${day}</td>
+                    <td class="text-wrap">${destinations}</td>
+                </tr>`;
                     });
-
 
                     tableHTML += '</tbody></table>';
                     dataContainer.innerHTML = tableHTML;
+
+                    // Disable this button, enable back button
                     convertButton.disabled = true;
                     convertButton2.disabled = false;
 
-
-
+                    // 🔥 Reapply the active filter to the table view
+                    applyFilter();
                 }
-
             });
 
-            // Initialize event listeners
+            // Back to grid view
             convertButton2.addEventListener('click', function () {
                 dataContainer.classList.toggle('table-view');
                 dataContainer.innerHTML = originalHTML;
@@ -1962,13 +2001,18 @@
                 convertButton.disabled = false;
                 convertButton2.disabled = true;
 
-
-                // Reattach event listeners
+                // Reattach listeners for grid mode
                 attachTabEventListeners();
                 attachBoxEventListeners();
-            })
+
+                // 🔥 Reapply the active filter to grid view
+                applyFilter();
+            });
+
+            // Attach initial listeners
             attachTabEventListeners();
             attachBoxEventListeners();
+
         });
 
 
@@ -2015,9 +2059,13 @@
         document.addEventListener("DOMContentLoaded", function () {
             const filters = document.querySelectorAll(".list.filter");
             const dataContainer = document.getElementById("dataContainer");
-            let activeFilter = null;
 
-            // Map data-filter values to their corresponding status text
+            const EN_ROUTE_KEY = "en route";
+            const IN_TRANSIT_KEY = "Completed"; // The filter key for In Transit
+            let activeFilter = null;
+            let inTransitState = null;
+            // null = off, true = show in-transit only, false = show not-in-transit only
+
             const filterStatusMap = {
                 "en route": "en route",
                 "Pending": "Awaiting takeoff",
@@ -2026,46 +2074,109 @@
                 "In Progress": "Completed"
             };
 
+            function getItemState(item, isTableView) {
+                const routeStatus = (
+                    isTableView
+                        ? (item.dataset.route || item.children[1]?.innerText || "")
+                        : (item.dataset.route || item.querySelector(".status p")?.innerText || "")
+                ).trim().toLowerCase();
+
+                const dataFlag = (item.dataset.intransit || "").toLowerCase();
+                const classFlag = item.classList.contains("in-transit");
+                const movementText = (
+                    isTableView
+                        ? (item.dataset.movement || item.children[2]?.innerText || "")
+                        : (item.dataset.movement || item.querySelector(".movement p")?.innerText || "")
+                ).trim().toLowerCase();
+
+                const inTransit = classFlag || dataFlag === "true" || /in\s*transit/i.test(movementText);
+                return { routeStatus, inTransit };
+            }
+
             function applyFilter() {
                 const isTableView = dataContainer.classList.contains("table-view");
-
-                // Use a single query selector for both views to avoid repetition
                 const items = isTableView
                     ? document.querySelectorAll("#dataContainer table tbody tr")
                     : document.querySelectorAll(".epod_dash_box");
 
                 items.forEach(item => {
-                    const statusText = isTableView
-                        ? item.children[1].innerText.trim()
-                        : item.querySelector(".status p")?.innerText.trim() || "";
+                    const { routeStatus, inTransit } = getItemState(item, isTableView);
+                    let show = true;
 
-                    // Check if the item's status matches the active filter's expected status
-                    const shouldShow = activeFilter === null || filterStatusMap[activeFilter] === statusText;
-                    item.style.display = shouldShow ? (isTableView ? "" : "block") : "none";
+                    if (activeFilter !== null) {
+                        const expected = (filterStatusMap[activeFilter] || activeFilter).toLowerCase();
+                        show = routeStatus === expected;
+
+                        if (activeFilter === EN_ROUTE_KEY && inTransitState !== null) {
+                            // true = in-transit only, false = not in-transit only
+                            show = show && (inTransit === inTransitState);
+                        }
+                    }
+
+                    item.style.display = show ? (isTableView ? "" : "block") : "none";
                 });
             }
 
-            filters.forEach(filter => {
-                filter.addEventListener("click", function () {
-                    const selectedFilter = this.getAttribute("data-filter");
+            filters.forEach(filterEl => {
+                filterEl.addEventListener("click", function () {
+                    const selected = this.getAttribute("data-filter");
 
-                    if (activeFilter === selectedFilter) {
-                        // Clicking the active filter again deactivates it
+                    if (selected === IN_TRANSIT_KEY) {
+                        if (activeFilter !== EN_ROUTE_KEY) {
+                            if (activeFilter !== null) {
+                                document.querySelector(`[data-filter="${activeFilter}"]`)?.classList.remove("active");
+                            }
+                            activeFilter = EN_ROUTE_KEY;
+                            document.querySelector(`[data-filter="${EN_ROUTE_KEY}"]`)?.classList.add("active");
+                        }
+
+                        // Cycle through states: null → true → false → null
+                        if (inTransitState === null) {
+                            inTransitState = true; // Show in-transit only
+                            this.classList.add("active");
+                            this.querySelector(".filter_text").innerText = "In Transit";
+                        } else if (inTransitState === true) {
+                            inTransitState = false; // Show not-in-transit only
+                            this.classList.add("active");
+                            this.querySelector(".filter_text").innerText = "Not In Transit";
+                        } else {
+                            inTransitState = null; // Clear in-transit filter
+                            this.classList.remove("active");
+                            this.querySelector(".filter_text").innerText = "In Transit";
+                        }
+
+                        applyFilter();
+                        return;
+                    }
+
+                    // Handle other filters
+                    if (activeFilter === selected) {
                         this.classList.remove("active");
                         activeFilter = null;
+                        inTransitState = null;
+                        document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"]`)?.classList.remove("active");
+                        document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"] .filter_text`).innerText = "In Transit";
                     } else {
-                        // Deactivate the currently active filter and activate the new one
                         if (activeFilter !== null) {
-                            document.querySelector(`[data-filter="${activeFilter}"]`).classList.remove("active");
+                            document.querySelector(`[data-filter="${activeFilter}"]`)?.classList.remove("active");
                         }
                         this.classList.add("active");
-                        activeFilter = selectedFilter;
+                        activeFilter = selected;
+
+                        if (activeFilter !== EN_ROUTE_KEY) {
+                            inTransitState = null;
+                            document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"]`)?.classList.remove("active");
+                            document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"] .filter_text`).innerText = "In Transit";
+                        }
                     }
 
                     applyFilter();
                 });
             });
+
+            applyFilter();
         });
+
 
 
     </script>
