@@ -435,7 +435,23 @@
                     <div class="epod-tab_contents">
                         <div id="shipment" class="tab">
                             <div class="title">Shipment Info</div>
-                            <div class="img_box"></div>
+                            <div class="status_controls">
+                                <button id="markArrival" class="status_btn arrival">Mark as Arrived</button>
+                                <button id="confirmArrival" class="status_btn arrival">Confirm Arrival</button>
+                                <button id="offloadCompleted" class="status_btn completed">Offload Completed</button>
+                            </div>
+
+                            <!-- Status Display -->
+                            <div class="status_info">
+                                <p id="arrivalStatus">Arrival: <span class="status_value">Not yet marked</span></p>
+                                <p id="confirmarrivalStatus">Arrival: <span class="status_value">Not yet
+                                        confirmed</span></p>
+                                <p id="offcompletionStatus">Offload Completion: <span class="status_value">Not yet
+                                        marked</span>
+                                </p>
+                            </div>
+
+                            <!-- <div class="img_box"></div> -->
                             <div class="epod_route">
                                 <div class="header">
                                     <div class="title">Route</div>
@@ -1582,7 +1598,7 @@
                     </div>
 
                     <div id="facility" class="tab-content">
-                        <button class="back-btn" onclick="goBack()" style="display: none;">>← Back</button>
+                        <button class="back-btn" onclick="goBack()" style="display: none;">← Back</button>
                         <h1>Create Facility</h2>
 
                             <form>
@@ -1842,7 +1858,7 @@
             if (window.innerWidth < 545) {
                 document.querySelector('.main-content').classList.add('active');
                 document.querySelector('.sidebar').classList.add('hidden');
-                document.querySelector('.back-btn').style.display = 'inline-block';
+                document.querySelector('.back-btnop').style.display = 'inline-block';
             }
         }
 
@@ -2772,11 +2788,11 @@
             }
         });
 
-        document.querySelectorAll(".filter").forEach(filter => {
-            filter.addEventListener("click", function () {
-                this.classList.toggle("active");
-            });
-        });
+        // document.querySelectorAll(".filter").forEach(filter => {
+        //     filter.addEventListener("click", function () {
+        //         this.classList.toggle("active");
+        //     });
+        // });
 
         const handleDropSearch = () => {
             document.querySelector('.epod_cont main .epod_tracking .search_box').classList.toggle('show')
@@ -3270,7 +3286,60 @@
         });
 
 
+
+
+
+
     </script>
+    <script>
+        // Replace with dynamic logged-in user name if available
+        const userSignature = "John Doe";
+
+        // Buttons
+        const arrivalBtn = document.getElementById('markArrival');
+        const confirmBtn = document.getElementById('confirmArrival');
+        const offloadBtn = document.getElementById('offloadCompleted');
+
+        // Status Display Elements
+        const arrivalStatus = document.querySelector('#arrivalStatus .status_value');
+        const confirmStatus = document.querySelector('#confirmarrivalStatus .status_value');
+        const offloadStatus = document.querySelector('#offcompletionStatus .status_value');
+
+        // Utility to get current date and time
+        const getCurrentTime = () => new Date().toLocaleString();
+
+        // Function to update status if not marked yet
+        const updateStatus = (element, label) => {
+            if (element.textContent.includes("Not yet")) {
+                element.textContent = `${label} at ${getCurrentTime()} by ${userSignature}`;
+            } else {
+                alert(`${label} has already been recorded!`);
+            }
+        };
+
+        // Event Listeners
+        arrivalBtn.addEventListener('click', () => {
+            updateStatus(arrivalStatus, "Arrived");
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            if (!arrivalStatus.textContent.includes("Not yet")) {
+                updateStatus(confirmStatus, "Arrival confirmed");
+            } else {
+                alert("You need to mark arrival first before confirming.");
+            }
+        });
+
+        offloadBtn.addEventListener('click', () => {
+            if (!confirmStatus.textContent.includes("Not yet")) {
+                updateStatus(offloadStatus, "Offload completed");
+            } else {
+                alert("You need to confirm arrival first before marking offload completion.");
+            }
+        });
+    </script>
+
+
     <script src="./script.js"></script>
 </body>
 

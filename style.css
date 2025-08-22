@@ -2274,3 +2274,42 @@ tr:hover {
     flex: 1 1 230px;
   }
 }
+
+.status_controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.status_btn {
+  padding: 8px 14px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+}
+
+.status_btn.arrival {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.status_btn.completed {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.status_info {
+  margin-top: 15px;
+  font-size: 14px;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.status_value {
+  font-weight: bold;
+  color: #333;
+}
