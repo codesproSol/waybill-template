@@ -12,9 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- DataTables CSS -->
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- jQuery -->
@@ -46,7 +44,7 @@
                     </div>
 
                 </div>
-                <div class="close_sidebar" onclick="handleCloseSidebar()"><i class="fa fa-close"></i></div>
+                <div class="close_sidebar" onclick="handleCloseSidebar()">X</div>
                 <ul>
 
 
@@ -131,13 +129,6 @@
                                     <div class="toggle_ball"></div>
                                 </div>
                             </div>
-                            <div class="list filter">
-                                <!-- <div class="filter_icon"><i class="fas fa-user"></i></div> -->
-
-                                <select id="clientFilter" class="client-filter-dropdown">
-                                    <option value="">All Clients</option>
-                                </select>
-                            </div>
                         </div>
                         <!-- <div class="header small">show</div> -->
 
@@ -203,7 +194,7 @@
                         </div>
 
                         <div class="epod_boxes" id="dataContainer">
-                            <div class="epod_dash_box in-transit" data-intransit="true">
+                            <div class="epod_dash_box in-transit">
                                 <div class="header">
                                     <div class="track_id">XY-1234-LAG</div>
                                     <div class="status enroute trackeron">
@@ -211,16 +202,6 @@
                                         <p>en route</p>
                                     </div>
                                 </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">Adewale Ayouba</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span class="cont_value">12345678</span>
-                                    </div>
-                                </div>
-
                                 <div class="truck_destination">
                                     <div class="time_details">
                                         <span class="time">06:15:00</span>
@@ -229,10 +210,8 @@
                                     <div class="destination_info">
                                         <div class="route active">
                                             <p>Ojodu Berger, Lagos Lorem ipsum dolor sit amet
-                                                consectetur adipisicing elit. Atque blanditiis, molestiae suscipit
-                                                nobis
-                                                asperiores tempore quia eveniet optio culpa nihil expedita hic
-                                                officiis
+                                                consectetur adipisicing elit. Atque blanditiis, molestiae suscipit nobis
+                                                asperiores tempore quia eveniet optio culpa nihil expedita hic officiis
                                                 ad
                                                 ea possimus iste, dicta non aperiam.</p>
                                         </div>
@@ -255,16 +234,6 @@
                                     <div class="status enroute trackeron">
                                         <div></div>
                                         <p>en route</p>
-                                    </div>
-                                </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">Adewale Yagi</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span
-                                            class="cont_value">bk-12345678</span>
                                     </div>
                                 </div>
                                 <div class="truck_destination">
@@ -295,17 +264,6 @@
                                     <div class="status arrived">
                                         <div></div>
                                         <p>Arrived</p>
-                                    </div>
-                                </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">Akorede
-                                            ayouba</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span
-                                            class="cont_value">cpl89845678</span>
                                     </div>
                                 </div>
                                 <div class="truck_destination">
@@ -341,15 +299,6 @@
                                         <p>Awaiting takeoff</p>
                                     </div>
                                 </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">Berlin Gbenga</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span class="cont_value">bgp345678</span>
-                                    </div>
-                                </div>
                                 <div class="truck_destination">
                                     <div class="time_details">
                                         <span class="time">09:10:00</span>
@@ -372,16 +321,6 @@
                                     <div class="status completed">
                                         <div></div>
                                         <p>Completed</p>
-                                    </div>
-                                </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">james
-                                            falola</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span class="cont_value">jka235678</span>
                                     </div>
                                 </div>
                                 <div class="truck_destination">
@@ -414,15 +353,6 @@
                                         <p>In transit</p>
                                     </div>
                                 </div>
-                                <div class="header">
-                                    <div>
-                                        <p class="cl_title">Client Name:</p>
-                                        <p class="cl_name">Chuwks Adama</p>
-                                    </div>
-                                    <div>
-                                        <p class="cl_title">Container No:</p> <span class="cont_value">opi9945678</span>
-                                    </div>
-                                </div>
                                 <div class="truck_destination">
                                     <div class="time_details">
                                         <span class="time">11:45:00</span>
@@ -441,24 +371,6 @@
                                 <div class="bl_no" style="display: none;">BL-006789</div>
                             </div>
                         </div>
-                        <div id="tableContainer" class="table-responsive">
-                            <table id="epodTable" class="display nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Action</th>
-                                        <th>Client Name</th>
-                                        <th>Container No</th>
-                                        <th>BL No</th>
-                                        <th>Truck ID</th>
-                                        <th>Status</th>
-                                        <th>Time</th>
-                                        <th>Day</th>
-                                        <th>Destination</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
 
                     </div>
                 </div>
@@ -473,8 +385,7 @@
                         </div>
                     </div>
                     <div class="header">
-                        <div class="cancel_button" onclick="handleSideToggle()"><i class="fa fa-arrow-right"></i>
-                        </div>
+                        <div class="cancel_button" onclick="handleSideToggle()"><i class="fa fa-arrow-right"></i></div>
                         <div class="track_id">XY-1234-LAG</div>
                         <div class="status intransit trackeron">
                             <div></div>
@@ -529,16 +440,14 @@
                                 <button id="startTrip" class="status_btn start">Start Trip</button>
                                 <button id="markArrival" class="status_btn arrival">Mark as Arrived</button>
                                 <button id="confirmArrival" class="status_btn arrival">Confirm Arrival</button>
-                                <button id="offloadCompleted" class="status_btn completed">Offload
-                                    Completed</button>
+                                <button id="offloadCompleted" class="status_btn completed">Offload Completed</button>
                             </div>
 
                             <!-- Status Display -->
                             <div class="status_info">
                                 <p id="tripStatus">Trip: <span class="status_value">Not yet started</span></p>
                                 <p id="arrivalStatus">Arrival: <span class="status_value">Not yet marked</span></p>
-                                <p id="confirmarrivalStatus">Arrival Confirmation: <span class="status_value">Not
-                                        yet
+                                <p id="confirmarrivalStatus">Arrival Confirmation: <span class="status_value">Not yet
                                         confirmed</span></p>
                                 <p id="offcompletionStatus">Offload Completion: <span class="status_value">Not yet
                                         marked</span></p>
@@ -609,8 +518,7 @@
                                     </div>
                                     <div class="info">
                                         <p class="bold"><i class="fa-solid fa-circle-check"></i> Status:</p>
-                                        <p class="status available"><i class="fa-solid fa-check-circle"></i>
-                                            Available
+                                        <p class="status available"><i class="fa-solid fa-check-circle"></i> Available
                                         </p>
                                     </div>
                                 </div>
@@ -666,8 +574,7 @@
                                         <p>Adewale Ayuba</p>
                                     </div>
                                     <div class="info">
-                                        <p class="bold"><i class="fa-solid fa-id-card"></i> Driver License Number:
-                                        </p>
+                                        <p class="bold"><i class="fa-solid fa-id-card"></i> Driver License Number:</p>
                                         <p>DL-987654</p>
                                     </div>
                                     <div class="info">
@@ -675,8 +582,7 @@
                                         <p>+234 812 345 6789</p>
                                     </div>
                                     <div class="info">
-                                        <p class="bold"><i class="fa-solid fa-phone-volume"></i> Emergency Contact:
-                                        </p>
+                                        <p class="bold"><i class="fa-solid fa-phone-volume"></i> Emergency Contact:</p>
                                         <p>+234 801 234 5678 (Boluwatife - Wife)</p>
                                     </div>
                                     <div class="info">
@@ -737,8 +643,7 @@
                                 <div class="title">Document</div>
                                 <div class="actions">
                                     <button onclick="downloadSelectedDocs()"><i class="fa fa-download"></i></button>
-                                    <button onclick="downloadDocAsZIP()"> <i class="fa fa-file-zipper"></i>
-                                    </button>
+                                    <button onclick="downloadDocAsZIP()"> <i class="fa fa-file-zipper"></i> </button>
                                     <!-- <button><i class="fa fa-envelope"></i> </button> -->
                                     <button onclick="shareWaydocFile()"><i class="fa fa-share"></i> </button>
                                     <button onclick="deleteSelectedDocs()">
@@ -809,8 +714,7 @@
                             <div class="doc_img">
                                 <iframe id="pdf_preview" style="display:none; width:100%; height:400px;"></iframe>
                                 <img id="image_preview" style="display:none; width:100%; max-width:500px;">
-                                <p id="unsupported_preview" style="display:none; color:red;">Preview not supported
-                                    for
+                                <p id="unsupported_preview" style="display:none; color:red;">Preview not supported for
                                     this
                                     file type.</p>
                             </div>
@@ -868,8 +772,7 @@
                                 <button type="button" onclick="handleStamp()" class="bt2op" title="Stamp"> <i
                                         class="fa-sharp fa-solid fa-stamp"></i>
                                 </button>
-                                <button onclick="panzoom.zoomIn()" title="Zoom In"> <i class="fa fa-plus"></i>
-                                </button>
+                                <button onclick="panzoom.zoomIn()" title="Zoom In"> <i class="fa fa-plus"></i> </button>
                                 <button onclick="panzoom.zoomOut()" title="Zoom Out">
                                     <div class="fa fa-minus" title="Reset Zoom"></div>
                                 </button>
@@ -893,14 +796,12 @@
                                     <h3>DISPATCH SECTION</h3>
                                     <div class="patner_cont">
                                         <h3>Client Information</h3>
-                                        <p><span class="bold">Client:</span> <span class="p_info">BURN STOVES
-                                                NIGERIA
+                                        <p><span class="bold">Client:</span> <span class="p_info">BURN STOVES NIGERIA
                                                 LIMITED</span></p>
                                         <p><span class="bold">Address:</span>
                                             <span class="add_info">Nigeria Limited, Bala Dawakin Industrial Layout,
                                                 Charo
-                                                Junction, Off Dawakin Kudu Road, Dawakin Local Government, Kano
-                                                State,
+                                                Junction, Off Dawakin Kudu Road, Dawakin Local Government, Kano State,
                                                 Nigeria.</span> Burn
                                         </p>
                                         <p><span class="bold">Contact Person:</span>
@@ -954,8 +855,7 @@
                                         </tr>
                                         <tr>
                                             <th>FROM</th>
-                                            <td>Burn Nigeria Limited, Bala Dawakin Industrial Layout, Charo
-                                                junction,
+                                            <td>Burn Nigeria Limited, Bala Dawakin Industrial Layout, Charo junction,
                                                 Kano
                                                 State, Nigeria</td>
                                             <th>TO</th>
@@ -1005,8 +905,7 @@
                                             <label><input type="radio" name="remark" value="Very Good"> Very
                                                 Good</label>
                                             <label><input type="radio" name="remark" value="Good"> Good</label>
-                                            <label><input type="radio" name="remark" value="Not Good"> Not
-                                                Good</label>
+                                            <label><input type="radio" name="remark" value="Not Good"> Not Good</label>
                                         </div>
                                         <h3>Remarks</h3>
                                         <textarea placeholder="remark" id="remarkv" readonly></textarea>
@@ -1079,14 +978,12 @@
                                         <div class="fot2">
                                             <div class="fort_fot ">
                                                 <!-- <h3>Terms and Conditions</h3> -->
-                                                <p> <span class="bold">Phone: </span> (234) 909 9710 778, (234) 818
-                                                    4792
+                                                <p> <span class="bold">Phone: </span> (234) 909 9710 778, (234) 818 4792
                                                     309
                                                 </p>
                                                 <p> <span class="bold">website: </span> https://libracircle.com</p>
                                                 <p> <span class="bold">Email: </span> info@libracircle.com</p>
-                                                <p class="upt"> <span class="bold">TIN: </span> 02624825-0001 |
-                                                    RC-32913
+                                                <p class="upt"> <span class="bold">TIN: </span> 02624825-0001 | RC-32913
                                                     |
                                                     VAT
                                                     IKV0600232913</p>
@@ -1127,8 +1024,7 @@
                                         <img src="./stamp1.svg" alt="" id="stampImage">
                                     </div>
                                     <div class="op_msg">Are you sure you want to stamp this document?</div>
-                                    <small class="notexs"> <span>Note:</span> Time stamp is based on server time and
-                                        not
+                                    <small class="notexs"> <span>Note:</span> Time stamp is based on server time and not
                                         your device time</small>
                                     <div class="stamp_opt">
                                         <button type="submit">Yes</button>
@@ -1252,8 +1148,7 @@
                                         </tr>
                                         <tr>
                                             <th>FROM</th>
-                                            <td>Burn Nigeria Limited, Bala Dawakin Industrial Layout, Charo
-                                                junction,
+                                            <td>Burn Nigeria Limited, Bala Dawakin Industrial Layout, Charo junction,
                                                 Kano
                                                 State, Nigeria</td>
                                             <th>TO</th>
@@ -1303,8 +1198,7 @@
                                             <label><input type="radio" name="remark" value="Very Good"> Very
                                                 Good</label>
                                             <label><input type="radio" name="remark" value="Good"> Good</label>
-                                            <label><input type="radio" name="remark" value="Not Good"> Not
-                                                Good</label>
+                                            <label><input type="radio" name="remark" value="Not Good"> Not Good</label>
                                         </div>
                                         <h3>Remarks</h3>
                                         <textarea placeholder="remark" id="remarkv" readonly></textarea>
@@ -1367,14 +1261,12 @@
                                         <div class="fot2">
                                             <div class="fort_fot ">
                                                 <!-- <h3>Terms and Conditions</h3> -->
-                                                <p> <span class="bold">Phone: </span> (234) 909 9710 778, (234) 818
-                                                    4792
+                                                <p> <span class="bold">Phone: </span> (234) 909 9710 778, (234) 818 4792
                                                     309
                                                 </p>
                                                 <p> <span class="bold">website: </span> https://libracircle.com</p>
                                                 <p> <span class="bold">Email: </span> info@libracircle.com</p>
-                                                <p class="upt"> <span class="bold">TIN: </span> 02624825-0001 |
-                                                    RC-32913
+                                                <p class="upt"> <span class="bold">TIN: </span> 02624825-0001 | RC-32913
                                                     |
                                                     VAT
                                                     IKV0600232913</p>
@@ -1424,8 +1316,7 @@
                                         <img src="./stamp1.svg" alt="" id="stampImage">
                                     </div>
                                     <div class="op_msg">Are you sure you want to stamp this document?</div>
-                                    <small class="notexs"> <span>Note:</span> Time stamp is based on server time and
-                                        not
+                                    <small class="notexs"> <span>Note:</span> Time stamp is based on server time and not
                                         your device time</small>
                                     <div class="stamp_opt">
                                         <button type="submit">Yes</button>
@@ -1524,8 +1415,7 @@
 
                     <div id="generalsettings" class="tab-content">
 
-                        <h1><button class="back-btn" onclick="goBack()" style="display: none;">←
-                                Back</button>GENERAL
+                        <h1><button class="back-btn" onclick="goBack()" style="display: none;">← Back</button>GENERAL
                         </h1>
                         <h1>Stamp</h1>
                         <form>
@@ -1838,12 +1728,6 @@
 
     <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script>
         $(document).ready(function () {
             $('#subUserTable').DataTable({
@@ -2002,374 +1886,319 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
+
         document.addEventListener("DOMContentLoaded", function () {
             const dataContainer = document.getElementById('dataContainer');
             const convertButton = document.getElementById('convertToTable');
             const convertButton2 = document.getElementById('convertToBoxes');
             const epodDetails = document.querySelector('.epod_cont main .epod_details');
             const loadingAnimation = document.querySelector('.loading-animation');
-            const searchInput = document.getElementById("searchInput");
-            const filters = document.querySelectorAll(".list.filter");
-            const clientFilterDropdown = document.getElementById("clientFilter");
 
-            // Table shell (inserted once)
-            const tableContainer = document.createElement('div');
-            tableContainer.id = 'tableContainer';
-            tableContainer.style.display = 'none';
-            tableContainer.innerHTML = `
-        <table id="epodTable" class="display nowrap" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Action</th>
-                    <th>Client Name</th>
-                    <th>Container No</th>
-                    <th>BL No</th>
-                    <th>Track ID</th>
-                    <th>Status</th>
-                    <th>Time</th>
-                    <th>Day</th>
-                    <th>Destination</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>`;
-            dataContainer.parentNode.insertBefore(tableContainer, dataContainer.nextSibling);
+            let epodDashBoxs = document.querySelectorAll('.epod_dash_box'); // Capture boxes initially
+            let originalHTML = dataContainer.innerHTML; // Store original layout
 
-            let epodDashBoxes = document.querySelectorAll('.epod_dash_box');
-            const originalHTML = dataContainer.innerHTML;
-            let dataTable = null;
+            // Handle side toggling
+            const handleSideToggle = () => {
+                epodDetails.classList.toggle('show');
+                epodDashBoxs.forEach((b) => b.classList.remove('active'));
+                loadingAnimation.classList.add('show');
 
-            // Global filter state (shared by both views)
-            let currentSearchQuery = "";
-            let activeFilter = null;
-            let inTransitState = null;      // true / false / null
-            let activeClientFilter = null;  // string | null
+                setTimeout(() => {
+                    loadingAnimation.classList.remove('show');
+                }, 1000);
 
-            // Map filter buttons to actual status text in the boxes/table
-            const filterStatusMap = {
-                "en route": "en route",
-                "Pending": "Awaiting takeoff",
-                "Completed": "Completed",
-                "Cancelled": "Arrived",
-                "In Progress": "In Progress"
             };
 
-            /** ---------- Utilities ---------- **/
-            function handleSideToggle() {
-                epodDetails.classList.toggle('show');
-                epodDashBoxes.forEach((b) => b.classList.remove('active'));
-                loadingAnimation.classList.add('show');
-                setTimeout(() => loadingAnimation.classList.remove('show'), 1000);
-            }
-            // Expose for inline onclick
-            window.handleSideToggle = handleSideToggle;
-
+            // Attach event listeners for epodDashBoxs
             function attachBoxEventListeners() {
-                epodDashBoxes = document.querySelectorAll('.epod_dash_box');
-                epodDashBoxes.forEach((b) => b.classList.remove('active'));
-                epodDashBoxes.forEach((box) => {
+                epodDashBoxs = document.querySelectorAll('.epod_dash_box'); // Refresh box list
+
+                epodDashBoxs.forEach((b) => b.classList.remove('active')); // Remove active initially
+
+                epodDashBoxs.forEach((box) => {
                     box.addEventListener('click', () => {
-                        epodDashBoxes.forEach((b) => b.classList.remove('active'));
+                        epodDashBoxs.forEach((b) => b.classList.remove('active'));
                         box.classList.add('active');
                         epodDetails.classList.add('show');
                     });
                 });
             }
 
+            // Attach event listeners for tabs
             function attachTabEventListeners() {
                 const tabs = document.querySelectorAll(".epod_navlinks button");
                 const contents = document.querySelectorAll(".epod-tab_contents .tab");
+
                 tabs.forEach(tab => {
                     tab.addEventListener("click", function () {
                         tabs.forEach(t => t.classList.remove("current"));
                         contents.forEach(content => content.classList.remove("active"));
+
                         this.classList.add("current");
-                        document.querySelector(`.epod-tab_contents #${this.id}`)?.classList.add("active");
+
+                        const tabId = this.id;
+                        document.querySelector(`.epod-tab_contents #${tabId}`)?.classList.add("active");
                     });
                 });
             }
 
-            function extractRows() {
-                const dashBoxes = dataContainer.querySelectorAll('.epod_dash_box');
-                return Array.from(dashBoxes).map(box => {
-                    const isInTransit = box.classList.contains('in-transit')
-                        || (box.dataset.intransit === "true");
-                    const statusText = box.querySelector('.status p')?.textContent.trim() || '';
-                    const statusClasses = Array.from(box.querySelector('.status')?.classList || []).join(' ');
-                    return {
-                        trackId: box.querySelector('.track_id')?.textContent.trim() || '',
-                        clientName: box.querySelector('.cl_name')?.textContent.trim() || '',
-                        containerNo: box.querySelector('.cont_value')?.textContent.trim() || '',
-                        blNo: box.querySelector('.bl_no')?.textContent.trim() || '',
-                        status: statusText,
-                        statusClasses,
-                        time: box.querySelector('.time')?.textContent.trim() || '',
-                        day: box.querySelector('.day')?.textContent.trim() || '',
-                        destinations: Array.from(box.querySelectorAll('.route'))
-                            .map(route => (route.querySelector('p') || route).textContent.trim())
-                            .join(', '),
-                        inTransit: isInTransit
-                    };
-                });
-            }
-
-            function populateTable() {
-                const tableBody = document.querySelector('#epodTable tbody');
-                const rows = extractRows();
-                tableBody.innerHTML = rows.map(row => `
-            <tr data-intransit="${row.inTransit}" data-route="${row.status.toLowerCase()}">
-                <td>
-                    <button type="button" class="btn-primary3" onclick="handleSideToggle()">Details</button>
-                </td>
-                <td>${row.clientName}</td>
-                <td>${row.containerNo}</td>
-                <td>${row.blNo}</td>
-                <td>${row.trackId}</td>
-                <td>
-                    <div class="${row.statusClasses}" style="display:flex;align-items:center;gap:5px;">
-                        <div></div><p>${row.status}</p>
-                    </div>
-                </td>
-                <td>${row.time}</td>
-                <td>${row.day}</td>
-                <td class="text-wrap">${row.destinations}</td>
-            </tr>
-        `).join('');
-            }
-
-            function populateClientFilterDropdown() {
-                const clientNames = new Set();
-                const dashBoxes = document.querySelectorAll('.epod_dash_box');
-                dashBoxes.forEach(box => {
-                    const clientName = box.querySelector('.cl_name')?.textContent.trim();
-                    if (clientName) clientNames.add(clientName);
-                });
-
-                clientFilterDropdown.innerHTML = '<option value="">All Clients</option>';
-                clientNames.forEach(name => {
-                    const option = document.createElement('option');
-                    option.value = name;
-                    option.textContent = name;
-                    clientFilterDropdown.appendChild(option);
-                });
-            }
-
-            function initDataTable() {
-                if ($.fn.DataTable.isDataTable('#epodTable')) {
-                    $('#epodTable').DataTable().destroy();
-                }
-                dataTable = $('#epodTable').DataTable({
-                    responsive: true,
-                    paging: true,
-                    searching: true,
-                    ordering: true,
-                    pageLength: 10,
-                    footer: false,
-                    dom: 'Bfrtip',
-                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-                    columnDefs: [{ orderable: false, targets: 0 }],
-                });
-            }
-
-            /** ---------- Centralized (re)apply logic ---------- **/
-            function reapplyFilters() {
-                const isTableView = tableContainer.style.display === 'block';
-
-                if (isTableView && dataTable) {
-                    // Apply global search + custom filter (ext.search) via draw
-                    dataTable.search(currentSearchQuery);
-                    dataTable.draw(false); // false -> keep current paging
-                } else {
-                    // Box view manual filtering
-                    const boxes = document.querySelectorAll(".epod_dash_box");
-                    const q = (currentSearchQuery || "").toUpperCase();
-
-                    boxes.forEach(box => {
-                        const trackId = box.querySelector(".track_id")?.textContent.toUpperCase() || "";
-                        const blNo = box.querySelector(".bl_no")?.textContent.toUpperCase() || "";
-                        const client = box.querySelector(".cl_name")?.textContent.trim();
-                        const status = (box.querySelector(".status p")?.textContent || "").trim();
-                        const inTrans = box.classList.contains("in-transit");
-
-                        const searchMatch = trackId.includes(q) || blNo.includes(q);
-
-                        let filterMatch = true;
-                        if (activeFilter !== null) {
-                            const expected = (filterStatusMap[activeFilter] || activeFilter);
-                            if (activeFilter === "en route") {
-                                filterMatch = (inTransitState !== null)
-                                    ? (status === expected && inTrans === inTransitState)
-                                    : (status === expected);
-                            } else {
-                                filterMatch = (status === expected);
-                            }
-                        }
-                        if (activeClientFilter) {
-                            filterMatch = filterMatch && (client === activeClientFilter);
-                        }
-                        box.style.display = (searchMatch && filterMatch) ? "block" : "none";
-                    });
-                }
-            }
-
-            /** ---------- Register ONE DataTables custom filter ---------- **/
-            // Guard so we don't push multiple identical filters across page reloads/partials.
-            if (!window.__epodTableFilterRegistered) {
-                $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
-                    // Only apply to our table
-                    if (!settings.nTable || settings.nTable.id !== 'epodTable') return true;
-
-                    // If table view isn't visible, don't block anything (let box mode handle it)
-                    const isTableView = (document.getElementById('tableContainer')?.style.display === 'block');
-                    if (!isTableView) return true;
-
-                    // Access the actual <tr> for attributes
-                    const api = new $.fn.dataTable.Api(settings);
-                    const rowNode = api.row(dataIndex).node();
-                    if (!rowNode) return true;
-
-                    const rowStatus = (rowNode.getAttribute('data-route') || '').toLowerCase();
-                    const rowInTransit = (rowNode.getAttribute('data-intransit') === 'true');
-
-                    // DataTables `data` array is the visible columns; index 1 = Client Name (per our header)
-                    function normalizeText(text) {
-                        return text.replace(/\s+/g, ' ').trim().toLowerCase();
-                    }
-
-                    const rowClientName = normalizeText(data[1] || '');
-
-
-                    // Status filter
-                    let statusMatch = true;
-                    if (activeFilter !== null) {
-                        const expectedStatus = ((filterStatusMap[activeFilter] || activeFilter) + '').toLowerCase();
-                        if (activeFilter === "en route") {
-                            if (inTransitState !== null) {
-                                statusMatch = (rowStatus === expectedStatus) && (rowInTransit === inTransitState);
-                            } else {
-                                statusMatch = (rowStatus === expectedStatus);
-                            }
-                        } else {
-                            statusMatch = (rowStatus === expectedStatus);
-                        }
-                    }
-
-                    // Client filter
-                    let clientMatch = true;
-                    if (activeClientFilter) {
-                        clientMatch = (rowClientName === normalizeText(activeClientFilter));
-                        console.log('Row client:', rowClientName, '| Active filter:', activeClientFilter);
-
-                    }
-
-                    return statusMatch && clientMatch;
-                });
-
-                window.__epodTableFilterRegistered = true;
-            }
-
-            /** ---------- Events ---------- **/
-            // Search box (external)
-            searchInput.addEventListener("keyup", function () {
-                currentSearchQuery = this.value || "";
-                reapplyFilters();
-            });
-
-            // Client dropdown
-            clientFilterDropdown.addEventListener("change", function () {
-                activeClientFilter = this.value || null;
-                reapplyFilters();
-            });
-
-            // Toggle: Boxes -> Table
             convertButton.addEventListener('click', function () {
-                dataContainer.style.display = 'none';
-                tableContainer.style.display = 'block';
+                dataContainer.classList.toggle('table-view');
 
-                populateTable();
-                initDataTable();
+                if (dataContainer.classList.contains('table-view')) {
+                    let tableHTML = `
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Truck ID</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Destination</th>
+                </tr>
+            </thead>
+            <tbody>`;
 
-                // Apply current search+filters immediately
-                reapplyFilters();
+                    // Build table rows from boxes
+                    const dashBoxes = dataContainer.querySelectorAll('.epod_dash_box');
+                    dashBoxes.forEach(box => {
+                        const trackId = box.querySelector('.track_id')?.textContent.trim() || '';
+                        const statusText = box.querySelector('.status p')?.textContent.trim() || '';
+                        const time = box.querySelector('.time')?.textContent.trim() || '';
+                        const day = box.querySelector('.day')?.textContent.trim() || '';
 
-                convertButton.disabled = true;
-                convertButton2.disabled = false;
+                        // Detect in-transit status
+                        const isInTransit = box.classList.contains('in-transit') ||
+                            (box.dataset.intransit && box.dataset.intransit === "true");
+
+                        // Collect destinations
+                        const destinations = Array.from(box.querySelectorAll('.route')).map(route => {
+                            const routeP = route.querySelector('p');
+                            return routeP ? routeP.textContent.trim() : route.textContent.trim();
+                        }).join(', ') || '';
+
+                        // Action button for details
+                        const actionBtnTable = `<button type="button" class="btn-primary3" onclick="handleSideToggle()">Details</button>`;
+
+                        // Status indicator
+                        const statscls = box.querySelector('.status').classList;
+                        const statusIndicator = `<div class="${statscls}" style="display: flex; align-items: center; gap: 5px;">
+                                        <div></div>
+                                        <p>${statusText}</p>
+                                    </div>`;
+
+                        // Add row to table
+                        tableHTML += `
+                <tr data-intransit="${isInTransit}" data-route="${statusText.toLowerCase()}">
+                    <td>${actionBtnTable}</td>
+                    <td>${trackId}</td>
+                    <td>${statusIndicator}</td>
+                    <td>${time}</td>
+                    <td>${day}</td>
+                    <td class="text-wrap">${destinations}</td>
+                </tr>`;
+                    });
+
+                    tableHTML += '</tbody></table>';
+                    dataContainer.innerHTML = tableHTML;
+
+                    // Disable this button, enable back button
+                    convertButton.disabled = true;
+                    convertButton2.disabled = false;
+
+                    // 🔥 Reapply the active filter to the table view
+                    applyFilter();
+                }
             });
 
-            // Toggle: Table -> Boxes
+            // Back to grid view
             convertButton2.addEventListener('click', function () {
-                dataContainer.style.display = 'grid';
-                tableContainer.style.display = 'none';
-
-                // Restore original boxes DOM
+                dataContainer.classList.toggle('table-view');
                 dataContainer.innerHTML = originalHTML;
-                attachBoxEventListeners();
-                attachTabEventListeners();
-
-                // Apply current search+filters to boxes
-                reapplyFilters();
 
                 convertButton.disabled = false;
                 convertButton2.disabled = true;
+
+                // Reattach listeners for grid mode
+                attachTabEventListeners();
+                attachBoxEventListeners();
+
+                // 🔥 Reapply the active filter to grid view
+                applyFilter();
             });
 
-            // Status / In-Transit filters
+            // Attach initial listeners
+            attachTabEventListeners();
+            attachBoxEventListeners();
+
+        });
+
+
+        function searchBoxes() {
+            let input = document.getElementById("searchInput").value.toUpperCase();
+            let isTableView = document.getElementById("dataContainer").classList.contains("table-view");
+
+            if (isTableView) {
+                // Searching in table view
+                let rows = document.querySelectorAll("#dataContainer table tbody tr");
+
+                rows.forEach(row => {
+                    let trackId = row.children[0].innerText.toUpperCase();
+                    let blNo = row.children[5].innerText.toUpperCase();
+
+                    if (trackId.includes(input) || blNo.includes(input)) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+
+            } else {
+                // Searching in box view
+                let boxes = document.querySelectorAll(".epod_dash_box");
+
+                boxes.forEach(box => {
+                    let trackId = box.querySelector(".track_id")?.innerText.toUpperCase() || "";
+                    let blNo = box.querySelector(".bl_no")?.innerText.toUpperCase() || "";
+
+                    if (trackId.includes(input) || blNo.includes(input)) {
+                        box.style.display = "block";
+                        box.style.maxWidth = "fit-content";
+                    } else {
+                        box.style.display = "none";
+                    }
+                });
+            }
+        }
+
+        // Enable search on input keyup
+        document.getElementById("searchInput").addEventListener("keyup", searchBoxes);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const filters = document.querySelectorAll(".list.filter");
+            const dataContainer = document.getElementById("dataContainer");
+
+            const EN_ROUTE_KEY = "en route";
+            const IN_TRANSIT_KEY = "Completed"; // The filter key for In Transit
+            let activeFilter = null;
+            let inTransitState = null;
+            // null = off, true = show in-transit only, false = show not-in-transit only
+
+            const filterStatusMap = {
+                "en route": "en route",
+                "Pending": "Awaiting takeoff",
+                "Completed": "In transit",
+                "Cancelled": "Arrived",
+                "In Progress": "Completed"
+            };
+
+            function getItemState(item, isTableView) {
+                const routeStatus = (
+                    isTableView
+                        ? (item.dataset.route || item.children[1]?.innerText || "")
+                        : (item.dataset.route || item.querySelector(".status p")?.innerText || "")
+                ).trim().toLowerCase();
+
+                const dataFlag = (item.dataset.intransit || "").toLowerCase();
+                const classFlag = item.classList.contains("in-transit");
+                const movementText = (
+                    isTableView
+                        ? (item.dataset.movement || item.children[2]?.innerText || "")
+                        : (item.dataset.movement || item.querySelector(".movement p")?.innerText || "")
+                ).trim().toLowerCase();
+
+                const inTransit = classFlag || dataFlag === "true" || /in\s*transit/i.test(movementText);
+                return { routeStatus, inTransit };
+            }
+
+            function applyFilter() {
+                const isTableView = dataContainer.classList.contains("table-view");
+                const items = isTableView
+                    ? document.querySelectorAll("#dataContainer table tbody tr")
+                    : document.querySelectorAll(".epod_dash_box");
+
+                items.forEach(item => {
+                    const { routeStatus, inTransit } = getItemState(item, isTableView);
+                    let show = true;
+
+                    if (activeFilter !== null) {
+                        const expected = (filterStatusMap[activeFilter] || activeFilter).toLowerCase();
+                        show = routeStatus === expected;
+
+                        if (activeFilter === EN_ROUTE_KEY && inTransitState !== null) {
+                            // true = in-transit only, false = not in-transit only
+                            show = show && (inTransit === inTransitState);
+                        }
+                    }
+
+                    item.style.display = show ? (isTableView ? "" : "block") : "none";
+                });
+            }
+
             filters.forEach(filterEl => {
                 filterEl.addEventListener("click", function () {
                     const selected = this.getAttribute("data-filter");
-                    const inTransitButton = document.querySelector(`[data-filter="Completed"]`);
-                    const enRouteButton = document.querySelector(`[data-filter="en route"]`);
-                    const inTransitButtonText = inTransitButton?.querySelector(".filter_text");
 
-                    if (selected === "Completed") {
-                        // Completed button is used as a tri-state in-transit toggle for "en route"
-                        if (activeFilter !== "en route") {
-                            activeFilter = "en route";
-                            enRouteButton?.classList.add("active");
-                        }
-                        if (inTransitState === null) {
-                            inTransitState = true;
-                            this.classList.add("active");
-                            if (inTransitButtonText) inTransitButtonText.innerText = "In Transit";
-                        } else if (inTransitState === true) {
-                            inTransitState = false;
-                            if (inTransitButtonText) inTransitButtonText.innerText = "Not In Transit";
-                        } else {
-                            inTransitState = null;
-                            this.classList.remove("active");
-                            enRouteButton?.classList.remove("active");
-                            activeFilter = null;
-                            if (inTransitButtonText) inTransitButtonText.innerText = "In Transit";
-                        }
-                    } else {
-                        if (activeFilter === selected) {
-                            this.classList.remove("active");
-                            activeFilter = null;
-                        } else {
+                    if (selected === IN_TRANSIT_KEY) {
+                        if (activeFilter !== EN_ROUTE_KEY) {
                             if (activeFilter !== null) {
                                 document.querySelector(`[data-filter="${activeFilter}"]`)?.classList.remove("active");
                             }
-                            this.classList.add("active");
-                            activeFilter = selected;
+                            activeFilter = EN_ROUTE_KEY;
+                            document.querySelector(`[data-filter="${EN_ROUTE_KEY}"]`)?.classList.add("active");
                         }
-                        inTransitState = null;
-                        inTransitButton?.classList.remove("active");
-                        if (inTransitButtonText) inTransitButtonText.innerText = "In Transit";
+
+                        // Cycle through states: null → true → false → null
+                        if (inTransitState === null) {
+                            inTransitState = true; // Show in-transit only
+                            this.classList.add("active");
+                            this.querySelector(".filter_text").innerText = "In Transit";
+                        } else if (inTransitState === true) {
+                            inTransitState = false; // Show not-in-transit only
+                            this.classList.add("active");
+                            this.querySelector(".filter_text").innerText = "Not In Transit";
+                        } else {
+                            inTransitState = null; // Clear in-transit filter
+                            this.classList.remove("active");
+                            this.querySelector(".filter_text").innerText = "In Transit";
+                        }
+
+                        applyFilter();
+                        return;
                     }
 
-                    reapplyFilters();
+                    // Handle other filters
+                    if (activeFilter === selected) {
+                        this.classList.remove("active");
+                        activeFilter = null;
+                        inTransitState = null;
+                        document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"]`)?.classList.remove("active");
+                        document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"] .filter_text`).innerText = "In Transit";
+                    } else {
+                        if (activeFilter !== null) {
+                            document.querySelector(`[data-filter="${activeFilter}"]`)?.classList.remove("active");
+                        }
+                        this.classList.add("active");
+                        activeFilter = selected;
+
+                        if (activeFilter !== EN_ROUTE_KEY) {
+                            inTransitState = null;
+                            document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"]`)?.classList.remove("active");
+                            document.querySelector(`[data-filter="${IN_TRANSIT_KEY}"] .filter_text`).innerText = "In Transit";
+                        }
+                    }
+
+                    applyFilter();
                 });
             });
 
-            /** ---------- Init ---------- **/
-            attachTabEventListeners();
-            attachBoxEventListeners();
-            populateClientFilterDropdown();
-            reapplyFilters(); // apply defaults on load
+            applyFilter();
         });
+
+
+
     </script>
-
-
 
 
     <script>
